@@ -1,0 +1,9 @@
+package drools.presentation.rules
+
+rule "Hello World"
+
+when
+    $p : Object()
+then
+    System.out.println("Hello World From helloWorld.drl"); 
+end

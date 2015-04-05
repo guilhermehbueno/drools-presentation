@@ -1,0 +1,7 @@
+package drools.presentation.rules.dsl
+
+import drools.presentation.models.User;
+
+function String buildMessageFor(User user) {
+    return "Hello, "+user.getName();
+}

@@ -1,0 +1,19 @@
+package drools.presentation.rules
+
+import drools.presentation.models.User;
+
+rule "Hello World to User"
+
+when
+    $user : User()
+then
+    System.out.println("Hello, "+$user.getName()); 
+end
+
+rule "Hello World to the coolest User"
+
+when
+    $user : User(name == "Guilherme")
+then
+    System.out.println("Hello coolest user, "+$user.getName()); 
+end

@@ -1,0 +1,13 @@
+package drools.presentation.rules.dsl
+
+expander authorize.dsl
+
+rule "Authorize User in Brazil Using a DSL"
+	agenda-group "Brazil"
+
+when
+    There is a Person older than "18"
+then
+	set your authorize flag to "true"
+    Print a welcome message "You are Authorized by Brazil Rule!"
+end

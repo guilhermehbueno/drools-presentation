@@ -1,0 +1,48 @@
+package drools.presentation.rules
+
+import drools.presentation.models.User;
+
+function String buildMessageFor(User user) {
+    return "Hello, "+user.getName();
+}
+
+rule "Authorize User in Brazil"
+	agenda-group "Brazil"
+
+when
+    $user : User(age >= 18)
+then
+    $user.setAuthorized(true);
+    System.out.println(buildMessageFor($user)); 
+end
+
+rule "Deauthorize User in Brazil"
+	agenda-group "Brazil"
+
+when
+    $user : User(age < 18)
+then
+    $user.setAuthorized(true);
+    System.out.println("Hello, "+$user.getName()+"! You are Deauthorized by Brazil Rule!"); 
+end
+
+
+rule "Authorize User in USA"
+	agenda-group "USA"
+
+when
+    $user : User(age >= 21)
+then
+    $user.setAuthorized(true);
+    System.out.println("Hello, "+$user.getName()+"! You are Authorized by USA Rule!"); 
+end
+
+rule "Deauthorize User in USA"
+	agenda-group "USA"
+
+when
+    $user : User(age < 21)
+then
+    $user.setAuthorized(false);
+    System.out.println("Hello, "+$user.getName()+"! You are Deauthorized by USA Rule!"); 
+end
