@@ -13,14 +13,14 @@ public class RuleHelperTest {
 	
 	@Test
 	public void shouldLoadRules() throws Exception{
-		RuleResource[] loadRulesFromFiles = RuleHelper.loadRulesFromFiles("helloWorld.drl", "helloWorldWithUser.drl");
+		RuleResource[] loadRulesFromFiles = RuleHelper.loadRulesFromFiles("src/main/resources/rules/helloWorld.drl", "src/main/resources/rules/helloWorldWithUser.drl");
 		Assert.assertNotNull(loadRulesFromFiles);
 		Assert.assertTrue(loadRulesFromFiles.length == 2);
 	}
 	
 	@Test
 	public void shouldLoadRuleProperly() throws Exception{
-		RuleResource ruleResource = RuleHelper.loadRuleFromFile("helloWorld.drl");
+		RuleResource ruleResource = RuleHelper.loadRuleFromFile("src/main/resources/rules/helloWorld.drl");
 		Assert.assertNotNull(ruleResource);
 		Assert.assertNotNull(ruleResource.getContent());
 		Assert.assertEquals(ruleResource.getType(), ResourceType.DRL);

@@ -12,7 +12,7 @@ public class AgendaGroupRuleTest {
 	@Test
 	public void shouldExecuteRulesByGroup() throws Exception{
 		User user = new User("Guilherme", 19);
-		RuleExecutor executor2 = new RuleExecutor("authorize-rules-by-agenda-group", RuleHelper.loadRuleFromFile("authorizeByCountry.drl"));
+		RuleExecutor executor2 = new RuleExecutor("authorize-rules-by-agenda-group", RuleHelper.loadRuleFromFile("src/main/resources/rules/authorizeByCountry.drl"));
 		Assert.assertFalse(user.isAuthorized());
 		System.out.println("Executing rule with USA group: ");
 		executor2.execute(user, "USA");

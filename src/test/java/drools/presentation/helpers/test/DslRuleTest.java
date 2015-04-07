@@ -12,7 +12,7 @@ public class DslRuleTest {
 
 	@Test
 	public void shouldCallRuleWithDSL() throws Exception{
-		RuleResource[] rules = RuleHelper.loadRulesFromFiles("authorize-functions.drl", "authorize.dsl","authorize.dslr");
+		RuleResource[] rules = RuleHelper.loadRulesFromFiles("src/main/resources/rules/authorize-functions.drl", "src/main/resources/rules/authorize.dsl","src/main/resources/rules/authorize.dslr");
 		User user = new User("Guilherme", 27);
 		RuleExecutor executor2 = new RuleExecutor("authorize-rules-dsl", rules);
 		Assert.assertFalse(user.isAuthorized());

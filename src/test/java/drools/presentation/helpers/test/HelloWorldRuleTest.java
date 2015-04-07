@@ -14,7 +14,7 @@ public class HelloWorldRuleTest {
 
 	@BeforeClass
 	public void loadRules() throws Exception{
-		RuleResource[] rules = RuleHelper.loadRulesFromFiles("helloWorld.drl", "helloWorldWithUser.drl");
+		RuleResource[] rules = RuleHelper.loadRulesFromFiles("src/main/resources/rules/helloWorld.drl", "src/main/resources/rules/helloWorldWithUser.drl");
 		executor = new RuleExecutor("hello-world-rules",rules);
 	}
 	

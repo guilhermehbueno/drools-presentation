@@ -32,7 +32,7 @@ public class RuleHelper {
 			throw new IllegalArgumentException("Filename must have a extension");
 		}
 		
-		String content = IOUtils.toString(new FileReader("src/main/resources/rules/"+fileName));
+		String content = IOUtils.toString(new FileReader(fileName));
 		RuleResource resource = new RuleResource();
 		resource.setContent(content);
 		resource.setResourceName(fileName);
