@@ -52,6 +52,8 @@ public class RuleExecutor {
 		KieBase kieBase = kieContainer.getKieBase();
 		KieSession newKieSession = kieBase.newKieSession();
 		
+		
+		
 		newKieSession.getAgenda().getAgendaGroup(group).setFocus();
 		newKieSession.insert(model);
 		newKieSession.fireAllRules();

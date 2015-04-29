@@ -1,0 +1,22 @@
+package drools.presentation.rules
+
+import drools.presentation.models.User;
+
+rule "Hello To User 1"
+	no-loop
+when
+    $user : User(age >= 18)
+then
+    System.out.println("Hello "+ $user.getName()+" you are authorized."); 
+    modify($user){setAuthorized(true);};
+end
+
+rule "Print message for unauthorized users"
+	salience 100
+	no-loop
+when
+    $user : User(isAuthorized() == false)
+then
+    System.out.println("User "+ $user.getName()+ " is unauthorized"); 
+    modify($user){setAuthorized(false);};
+end

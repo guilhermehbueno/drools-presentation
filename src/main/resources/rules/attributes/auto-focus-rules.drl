@@ -1,0 +1,38 @@
+package drools.presentation.rules
+
+import drools.presentation.models.User;
+
+rule "Rule 1"
+	agenda-group "first"
+	auto-focus true
+when
+    Object()
+then
+    System.out.println("Executed: "+ drools.getRule().getName());
+    kcontext.getKnowledgeRuntime().getAgenda().getAgendaGroup( "second" ).setFocus(); 
+end
+
+rule "Rule 2"
+	agenda-group "second"
+when
+    $fact : Object()
+then
+    System.out.println("Executed: "+ drools.getRule().getName()); 
+end
+
+
+rule "Rule 3"
+	agenda-group "third"
+when
+    $fact : Object()
+then
+    System.out.println("Executed: "+ drools.getRule().getName()); 
+end
+
+
+rule "Rule 4"	
+when
+    $fact : Object()
+then
+    System.out.println("Executed: "+ drools.getRule().getName()); 
+end

@@ -1,0 +1,29 @@
+package drools.presentation.rules
+
+import drools.presentation.models.User;
+
+rule "Hello To User 1"
+	activation-group "filter-by"
+when
+    $user : User()
+then
+    System.out.println("Hello "+ $user.getName()+" you are authorized."); 
+end
+
+rule "Hello To User 1"
+	activation-group "boost-by"
+when
+    $user : User()
+then
+    System.out.println("Hello "+ $user.getName()+" you are authorized."); 
+end
+
+
+rule "Print message for unauthorized users"
+	salience 100
+	activation-group "filter-by"
+when
+    $user : User()
+then
+    System.out.println("User "+ $user.getName()+ " is unauthorized"); 
+end
