@@ -1,7 +1,5 @@
 package drools.presentation.attributes.test;
 
-import junit.framework.Assert;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,7 +18,7 @@ private RuleExecutor executor;
 	}
 	
 	@Test
-	public void shouldExecuteRuleWithHigherSalienceFirst(){
+	public void execute(){
 		User user = new User("Usuário 1", 27);
 		executor.execute(user);
 	}
